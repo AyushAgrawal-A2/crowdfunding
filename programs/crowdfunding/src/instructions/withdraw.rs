@@ -9,6 +9,7 @@ use crate::{error::CrowdfundingError, Campaign, CampaignStatus, CAMPAIGN_SEED};
 #[derive(Accounts)]
 #[instruction(id: u64)]
 pub struct Withdraw<'info> {
+    #[account(mut)]
     pub maker: Signer<'info>,
 
     #[account(
@@ -33,7 +34,8 @@ pub struct Withdraw<'info> {
     pub vault: InterfaceAccount<'info, TokenAccount>,
 
     #[account(
-        mut,
+        init_if_needed,
+        payer = maker,
         associated_token::mint = mint,
         associated_token::authority = maker,
         associated_token::token_program = token_program,

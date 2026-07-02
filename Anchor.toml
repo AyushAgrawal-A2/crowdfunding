@@ -7,7 +7,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-crowdfunding = "EZ8K1FWpiYn8dDH9NLbAiz54ixg7pKEL8pCDMXTZwF7d"
+crowdfunding = "HqR4o6QuU7tqygiz4ppjjQarXubpeyfXPQM4BF7342vw"
 
 [provider]
 cluster = "localnet"
